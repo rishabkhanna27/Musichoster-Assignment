@@ -1,0 +1,4 @@
+# Project exclude paths
+/musichoster-api/target/
+/musichoster-db/target/
+/musichoster-service/target/
