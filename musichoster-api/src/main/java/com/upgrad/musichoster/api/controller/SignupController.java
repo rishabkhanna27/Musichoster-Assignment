@@ -1,8 +1,10 @@
 package com.upgrad.musichoster.api.controller;
 
 import com.upgrad.musichoster.api.model.SignupUserRequest;
-import com.upgrad.musichoster.service.business.SignupBusinessService;
+import com.upgrad.musichoster.api.model.SignupUserResponse;
 import com.upgrad.musichoster.service.entity.UserEntity;
+
+import com.upgrad.musichoster.service.business.SignupBusinessService;
 
 import com.upgrad.musichoster.service.exception.SignUpRestrictedException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +21,10 @@ import java.util.UUID;
 public class SignupController {
 
     @Autowired
-
     private SignupBusinessService signupBusinessService;
 
     @RequestMapping(method = RequestMethod.POST, path = "/usersignup", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<com.upgrad.musichoster.api.model.SignupUserResponse> userSignup(final SignupUserRequest signupUserRequest) throws SignUpRestrictedException {
+    public ResponseEntity<SignupUserResponse> userSignup(final SignupUserRequest signupUserRequest) throws SignUpRestrictedException {
 
         final UserEntity userEntity = new UserEntity();
 
@@ -37,7 +38,7 @@ public class SignupController {
         userEntity.setRole("nonadmin");
 
         final UserEntity createdUserEntity = signupBusinessService.signup(userEntity);
-        com.upgrad.musichoster.api.model.SignupUserResponse userResponse = new com.upgrad.musichoster.api.model.SignupUserResponse().id(createdUserEntity.getUuid()).status("USER SUCCESSFULLY REGISTERED");
-        return new ResponseEntity<com.upgrad.musichoster.api.model.SignupUserResponse>(userResponse, HttpStatus.CREATED);
+        SignupUserResponse userResponse = new SignupUserResponse().id(createdUserEntity.getUuid()).status("USER SUCCESSFULLY REGISTERED");
+        return new ResponseEntity<SignupUserResponse>(userResponse, HttpStatus.CREATED);
     }
 }

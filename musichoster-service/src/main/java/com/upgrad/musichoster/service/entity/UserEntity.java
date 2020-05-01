@@ -13,6 +13,12 @@ import java.time.ZonedDateTime;
 
 
 
+//
+//@Entity
+//@Table(name = "USERS")
+//@NamedQueries({
+//        @NamedQuery(name = "userByEmail", query = "select u from UserEntity u where u.email = :email")
+//})
 
 @Entity
 @Table(name = "USERS")
