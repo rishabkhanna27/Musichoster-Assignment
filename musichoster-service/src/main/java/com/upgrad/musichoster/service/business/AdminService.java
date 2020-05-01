@@ -1,16 +1,16 @@
-package com.upgrad.musichoster.service.business;
-
-import com.upgrad.musichoster.service.entity.MusicEntity;
-import com.upgrad.musichoster.service.exception.MusicNotFoundException;
-import com.upgrad.musichoster.service.exception.UnauthorizedException;
-import com.upgrad.musichoster.service.exception.UserNotSignedInException;
-
-public interface AdminService {
-
-	MusicEntity getMusic(final String musicUuid, final String authorization) throws MusicNotFoundException,
-			UnauthorizedException, UserNotSignedInException;
-
-	MusicEntity updateMusic(final MusicEntity musicEntity, final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException;
-
-	MusicEntity updateMusicStatus(final Long musicId, final String status, final String authorization)  throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException;
-}
+//package com.upgrad.musichoster.service.business;
+//
+//import com.upgrad.musichoster.service.entity.MusicEntity;
+//import com.upgrad.musichoster.service.exception.MusicNotFoundException;
+//import com.upgrad.musichoster.service.exception.UnauthorizedException;
+//import com.upgrad.musichoster.service.exception.UserNotSignedInException;
+//
+//public interface AdminService {
+//
+//	MusicEntity getMusic(final String musicUuid, final String authorization) throws MusicNotFoundException,
+//			UnauthorizedException, UserNotSignedInException;
+//
+//	MusicEntity updateMusic(final MusicEntity musicEntity, final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException;
+//
+//	MusicEntity updateMusicStatus(final Long musicId, final String status, final String authorization)  throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException;
+//}

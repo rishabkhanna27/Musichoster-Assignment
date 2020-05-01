@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 
 @Repository
 @Transactional
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends UserDao {
 
 	@PersistenceContext private EntityManager entityManager;
 

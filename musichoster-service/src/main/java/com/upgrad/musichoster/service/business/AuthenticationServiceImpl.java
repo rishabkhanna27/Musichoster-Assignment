@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.ZonedDateTime;
-
 @Service
-public class AuthenticationServiceImpl implements AuthenticationService {
+public class AuthenticationServiceImpl extends AuthenticationService {
 
 	@Autowired
 	private UserDao userDao;
@@ -29,5 +27,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
 		final String encryptedPassword = CryptographyProvider.encrypt(password, userEntity.getSalt());
 
+		return null;
 	}
 }

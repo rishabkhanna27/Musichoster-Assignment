@@ -25,7 +25,7 @@ public class UserAuthTokenEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private UserEntity user;
+    private com.upgrad.musichoster.service.entity.UserEntity user;
 
     @Column(name = "ACCESS_TOKEN")
     @NotNull
@@ -43,6 +43,54 @@ public class UserAuthTokenEntity implements Serializable {
     @Column(name = "LOGOUT_AT")
     private ZonedDateTime logoutAt;
 
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public com.upgrad.musichoster.service.entity.UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(com.upgrad.musichoster.service.entity.UserEntity user) {
+        this.user = user;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public ZonedDateTime getLoginAt() {
+        return loginAt;
+    }
+
+    public void setLoginAt(ZonedDateTime loginAt) {
+        this.loginAt = loginAt;
+    }
+
+    public ZonedDateTime getExpiresAt() {
+        return expiresAt;
+    }
+
+    public void setExpiresAt(ZonedDateTime expiresAt) {
+        this.expiresAt = expiresAt;
+    }
+
+    public ZonedDateTime getLogoutAt() {
+        return logoutAt;
+    }
+
+    public void setLogoutAt(ZonedDateTime logoutAt) {
+        this.logoutAt = logoutAt;
+    }
 
     @Override
     public boolean equals(Object obj) {

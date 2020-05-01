@@ -2,16 +2,40 @@ package com.upgrad.musichoster.service.dao;
 
 import com.upgrad.musichoster.service.entity.UserAuthTokenEntity;
 import com.upgrad.musichoster.service.entity.UserEntity;
-import org.springframework.stereotype.Service;
+
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+
+@Repository
+public class UserDao {
 
 
-public interface UserDao {
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	 UserEntity createUser(UserEntity userEntity);
+    public UserEntity createUser(UserEntity userEntity) {
+        entityManager.persist(userEntity);
+        return userEntity;
+    }
 
-	 UserEntity getUserByEmail(final String email);
+    public UserEntity getUserByEmail(final String email) {
+        try {
+            return entityManager.createNamedQuery("userByEmail", UserEntity.class).setParameter("email", email).getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+    public UserAuthTokenEntity createAuthToken(final UserAuthTokenEntity userAuthTokenEntity) {
+        entityManager.persist(userAuthTokenEntity);
+        return userAuthTokenEntity;
+    }
 
-	 UserAuthTokenEntity createAuthToken(final UserAuthTokenEntity userAuthTokenEntity);
+    public void updateUser(final UserEntity updatedUserEntity) {
+        entityManager.merge(updatedUserEntity);
+    }
 
-	 void updateUser(final UserEntity updatedUserEntity);
+
 }

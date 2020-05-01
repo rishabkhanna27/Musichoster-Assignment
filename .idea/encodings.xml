@@ -3,12 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/musichoster-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/musichoster-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/musichoster-db" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/musichoster-db/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/musichoster-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/musichoster-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

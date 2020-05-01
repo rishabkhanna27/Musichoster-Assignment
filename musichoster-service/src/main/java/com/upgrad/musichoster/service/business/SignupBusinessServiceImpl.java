@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class SignupBusinessServiceImpl implements SignupBusinessService {
+public class SignupBusinessServiceImpl extends SignupBusinessService {
 
 	@Autowired private UserDao userDao;
 
@@ -25,5 +25,6 @@ public class SignupBusinessServiceImpl implements SignupBusinessService {
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(userEntity.getEmail());
 
+		return userEntity;
 	}
 }
