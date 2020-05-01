@@ -1,6 +1,6 @@
 package com.upgrad.musichoster.api.exception;
 
-import com.upgrad.musichoster.api.model.ErrorResponse;
+
 import com.upgrad.musichoster.service.exception.AuthenticationFailedException;
 import com.upgrad.musichoster.service.exception.UploadFailedException;
 
