@@ -2,7 +2,6 @@ package com.upgrad.musichoster.service.dao;
 
 import com.upgrad.musichoster.service.entity.UserAuthTokenEntity;
 import com.upgrad.musichoster.service.entity.UserEntity;
-
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
