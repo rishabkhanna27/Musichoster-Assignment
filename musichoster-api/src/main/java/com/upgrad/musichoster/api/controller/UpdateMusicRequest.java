@@ -27,7 +27,7 @@ public class UpdateMusicRequest {
         return this;
     }
 
-    @ApiModelProperty("This is video url")
+    @ApiModelProperty("This is music url")
     public String getMusic() {
         return this.music;
     }

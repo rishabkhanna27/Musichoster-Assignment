@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 @Entity
-@Table(name = "MUSIC")
+@Table(name = "MUSICS")
 @NamedQueries({
 		@NamedQuery(name = "MusicEntityByUuid", query = "select i from MusicEntity i where i.uuid = :uuid"),
 		@NamedQuery(name = "MusicEntityByid", query = "select i from MusicEntity i where i.id = :id")

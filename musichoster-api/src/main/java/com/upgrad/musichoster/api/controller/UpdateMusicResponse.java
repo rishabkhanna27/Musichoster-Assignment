@@ -26,7 +26,7 @@ public class UpdateMusicResponse {
         return this;
     }
 
-    @ApiModelProperty("id of the video")
+    @ApiModelProperty("id of the music")
     public Integer getId() {
         return this.id;
     }
@@ -40,7 +40,7 @@ public class UpdateMusicResponse {
         return this;
     }
 
-    @ApiModelProperty("Status of the video")
+    @ApiModelProperty("Status of the music")
     public String getStatus() {
         return this.status;
     }

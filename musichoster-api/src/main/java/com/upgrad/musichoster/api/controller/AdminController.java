@@ -19,32 +19,32 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/videos/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<MusicDetailsResponse> getVideo(@PathVariable("id") final String musicUuid, @RequestHeader("authorization") final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException {
+    @RequestMapping(method = RequestMethod.GET, path = "/MUSICS/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<MusicDetailsResponse> getMusic(@PathVariable("id") final String musicUuid, @RequestHeader("authorization") final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException {
 
 
-        final MusicEntity videoEntity = adminService.getMusic(musicUuid, authorization);
+        final MusicEntity musicEntity = adminService.getMusic(musicUuid, authorization);
 
 
-        MusicDetailsResponse videoDetailsResponse = new MusicDetailsResponse().
-                music(videoEntity.getMusic()).id((int) videoEntity.getId())
-                .name(videoEntity.getName()).description(videoEntity.getDescription())
-                .status(videoEntity.getStatus());
+        MusicDetailsResponse musicDetailsResponse = new MusicDetailsResponse().
+                music(musicEntity.getMusic()).id((int) musicEntity.getId())
+                .name(musicEntity.getName()).description(musicEntity.getDescription())
+                .status(musicEntity.getStatus());
 
-        return new ResponseEntity<MusicDetailsResponse>(videoDetailsResponse, HttpStatus.OK);
+        return new ResponseEntity<MusicDetailsResponse>(musicDetailsResponse, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "/videos/update/{video_id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<UpdateMusicResponse> updateVideo(final UpdateMusicRequest updateVideoRequest, @PathVariable("video_id") final long video_id, @RequestHeader("authorization") final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException {
-        MusicEntity videoEntity = new MusicEntity();
-        videoEntity.setMusic(updateVideoRequest.getMusic());
-        videoEntity.setId(video_id);
-        videoEntity.setName(updateVideoRequest.getName());
-        videoEntity.setStatus(updateVideoRequest.getStatus());
-        videoEntity.setDescription(updateVideoRequest.getDescription());
-        MusicEntity updatedvideoEntity = adminService.updateMusic(videoEntity, authorization);
-        UpdateMusicResponse updateVideoResponse = new UpdateMusicResponse().id((int) updatedvideoEntity.getId()).status(updatedvideoEntity.getStatus());
-        return new ResponseEntity<UpdateMusicResponse>(updateVideoResponse, HttpStatus.OK);
+    @RequestMapping(method = RequestMethod.PUT, path = "/MUSICS/update/{music_id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<UpdateMusicResponse> updateMusic(final UpdateMusicRequest updateMusicRequest, @PathVariable("music_id") final long music_id, @RequestHeader("authorization") final String authorization) throws MusicNotFoundException, UnauthorizedException, UserNotSignedInException {
+        MusicEntity musicEntity = new MusicEntity();
+        musicEntity.setMusic(updateMusicRequest.getMusic());
+        musicEntity.setId(music_id);
+        musicEntity.setName(updateMusicRequest.getName());
+        musicEntity.setStatus(updateMusicRequest.getStatus());
+        musicEntity.setDescription(updateMusicRequest.getDescription());
+        MusicEntity updatedmusicEntity = adminService.updateMusic(musicEntity, authorization);
+        UpdateMusicResponse updateMusicResponse = new UpdateMusicResponse().id((int) updatedmusicEntity.getId()).status(updatedmusicEntity.getStatus());
+        return new ResponseEntity<UpdateMusicResponse>(updateMusicResponse, HttpStatus.OK);
     }
 
 

@@ -63,7 +63,7 @@ public class MusicUploadRequest {
 
     @ApiModelProperty(
             required = true,
-            value = "Description of the musiic"
+            value = "Description of the music"
     )
     @NotNull
     public String getDescription() {

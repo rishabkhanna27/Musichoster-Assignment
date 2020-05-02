@@ -40,7 +40,7 @@ public class MusicDetailsResponse {
         return this.music;
     }
 
-    public void setMusic(String video) {
+    public void setMusic(String music) {
         this.music = music;
     }
 
@@ -105,7 +105,7 @@ public class MusicDetailsResponse {
 
     @ApiModelProperty(
             required = true,
-            value = "Video is active"
+            value = "music is active"
     )
     @NotNull
     public String getStatus() {
@@ -134,7 +134,7 @@ public class MusicDetailsResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MusicDetailsResponse   {\n");
-        sb.append("    video: ").append(this.toIndentedString(this.music)).append("\n");
+        sb.append("    music: ").append(this.toIndentedString(this.music)).append("\n");
         sb.append("    id: ").append(this.toIndentedString(this.id)).append("\n");
         sb.append("    name: ").append(this.toIndentedString(this.name)).append("\n");
         sb.append("    description: ").append(this.toIndentedString(this.description)).append("\n");
