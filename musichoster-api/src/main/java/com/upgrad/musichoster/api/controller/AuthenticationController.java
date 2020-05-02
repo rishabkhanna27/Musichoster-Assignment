@@ -43,4 +43,3 @@ public class AuthenticationController {
         return new ResponseEntity<AuthorizedUserResponse>(authorizedUserResponse, headers, HttpStatus.OK);
     }
 }
-//charu
